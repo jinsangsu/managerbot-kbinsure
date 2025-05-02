@@ -1,4 +1,2 @@
-streamlit
-openai==0.28
-requests
-Pillow
+fastapi
+uvicorn
