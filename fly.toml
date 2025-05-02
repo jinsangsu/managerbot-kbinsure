@@ -2,10 +2,9 @@ app = "managerbot-kbinsure"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
-processes = []
 
 [build]
-  dockerfile = "./Dockerfile"
+  dockerfile = "Dockerfile"
 
 [env]
   PORT = "8080"
@@ -23,7 +22,9 @@ processes = []
 [deploy]
   strategy = "rolling"
 
-[services]
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
   [[services.ports]]
     handlers = ["http"]
     port = 80
